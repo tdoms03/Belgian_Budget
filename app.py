@@ -11,13 +11,22 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from belgian_budget_data import (
-    BASELINE_TRAJECTORY,
-    BELGIAN_TAX_ELASTICITY_TAU,
-    POLICY_MEASURES,
-    PRESET_PROFILES,
-)
-from budget_or_model import BelgianBudgetOptimizer, OptimizationConfig
+try:
+    from belgian_budget_data import (
+        BASELINE_TRAJECTORY,
+        BELGIAN_TAX_ELASTICITY_TAU,
+        POLICY_MEASURES,
+        PRESET_PROFILES,
+    )
+    from budget_or_model import BelgianBudgetOptimizer, OptimizationConfig
+except ImportError:
+    from Belgian_Budget.belgian_budget_data import (
+        BASELINE_TRAJECTORY,
+        BELGIAN_TAX_ELASTICITY_TAU,
+        POLICY_MEASURES,
+        PRESET_PROFILES,
+    )
+    from Belgian_Budget.budget_or_model import BelgianBudgetOptimizer, OptimizationConfig
 
 st.set_page_config(
     page_title="Belgian Budget OR Optimizer (2025–2029)",

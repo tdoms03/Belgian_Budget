@@ -23,13 +23,22 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
 
-from belgian_budget_data import (
-    BASELINE_TRAJECTORY,
-    BELGIAN_TAX_ELASTICITY_TAU,
-    POLICY_MEASURES,
-    MacroYear,
-    PolicyMeasure,
-)
+try:
+    from belgian_budget_data import (
+        BASELINE_TRAJECTORY,
+        BELGIAN_TAX_ELASTICITY_TAU,
+        POLICY_MEASURES,
+        MacroYear,
+        PolicyMeasure,
+    )
+except ImportError:
+    from Belgian_Budget.belgian_budget_data import (
+        BASELINE_TRAJECTORY,
+        BELGIAN_TAX_ELASTICITY_TAU,
+        POLICY_MEASURES,
+        MacroYear,
+        PolicyMeasure,
+    )
 
 
 @dataclass
